@@ -1,10 +1,14 @@
 {
   "name": "pxui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a vue2.0 UI lib",
   "main": "lib/pxui.umd.min.js",
-  "keyword": "pxui",
+  "author": "paulxiao",
+  "keywords": ["pxui"],
   "private": false,
+  "homepage": "https://github.com/paul-xiao/pxui",
+  "repository": "git@github.com:paul-xiao/pxui.git",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

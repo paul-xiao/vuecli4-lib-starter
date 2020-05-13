@@ -1,3 +1,3 @@
 # pxui
 
-WIP: publish test
+init project
