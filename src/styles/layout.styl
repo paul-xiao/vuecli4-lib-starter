@@ -1,9 +1,9 @@
 body
   margin: 0
   color: $font-color 
-.theme-container
-  background: $theme-color url('/bg.png')
-.theme-content
+.{$prefix}-container
+  padding: 15px;
+.{$prefix}-content
   min-height: "calc(100vh - %s)" % ($head-height*2 + $base-padding*2) 
   padding: $base-padding
   background: $white
@@ -113,7 +113,7 @@ body
             width: 200px
             vertical-align: middle
             display: block
-.theme-header 
+.{$prefix}-header 
   background transparent
   display flex
   height: $head-height
@@ -182,7 +182,7 @@ body
            color: $base-color
            &:active, &:hover
               color: $border-color
-.theme-footer
+.{$prefix}-footer
   max-width: 1000px
   margin: 0 auto
   height: $head-height

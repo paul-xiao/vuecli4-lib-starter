@@ -1,4 +1,4 @@
-btn(bg = $base-color, font = $font-color )
+btn(bg = $base-color, font-color = $font-color )
   background: bg
   border: 0
   height: 35px
@@ -6,14 +6,17 @@ btn(bg = $base-color, font = $font-color )
   padding: 5px 12px
   font-size: 16px
   outline: none
-  color: font
+  color: font-color
+  cursor: pointer
+  &:active, &:hover, &:focus
+    background: darken(bg, 20%)
 .{$prefix}-btn
   btn()
   &+&
     margin-left: 5px
-  &-primary
+  &--primary
     btn $primary $white
-  &-secondary
+  &--secondary
     btn $secondary $white
 
 

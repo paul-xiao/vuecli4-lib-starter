@@ -1,5 +1,7 @@
 <template>
-  <button class="px-btn">
+  <button class="px-btn" :class="[
+      type ? 'px-btn--' + type : '',
+    ]">
     <slot>{{text}}</slot>
   </button>
 </template>
@@ -11,11 +13,13 @@ export default {
       type: String,
       default: 'button',
     },
+    type: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
-<style>
-body{
-  margin: 0;
-}
+<style lang="stylus">
+//
 </style>

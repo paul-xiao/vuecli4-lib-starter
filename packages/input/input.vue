@@ -1,5 +1,5 @@
 <template>
-  <button class="px-btn">
+  <button class="px-input">
     <slot>{{text}}</slot>
   </button>
 </template>
