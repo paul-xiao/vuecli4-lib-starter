@@ -1,4 +1,5 @@
 const path = require('path');
+// const styleConfig = require('./build/weboack.style.config');
 
 module.exports = {
   pages: {
@@ -9,11 +10,27 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
-    config.module
-      .rule('js')
-      .include.add(path.resolve(__dirname, 'packages')).end()
-      .use('babel')
-      .loader('babel-loader')
-      .tap((options) => options);
+    // config.module
+    //   .rule('js')
+    //   .include.add(path.resolve(__dirname, 'src')).end()
+    //   .use('babel')
+    //   .loader('babel-loader')
+    //   .tap((options) => options)
+    //   .rule('css')
+    //   .include.add(path.resolve(__dirname, 'src/styles')).end()
+    //   .use('stylus')
+    //   .loader('stylus-loader')
+    //   .tap((options) => options);
+  },
+  configureWebpack: (config) => {
+    // Object.assign(config, styleConfig);
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'stylus',
+      patterns: [
+        path.resolve(__dirname, './src/styles/index.styl'),
+      ],
+    },
   },
 };

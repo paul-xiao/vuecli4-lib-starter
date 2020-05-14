@@ -4,16 +4,20 @@
   "description": "a vue2.0 UI lib",
   "main": "lib/pxui.umd.min.js",
   "author": "paulxiao",
-  "keywords": ["pxui"],
+  "keywords": [
+    "pxui"
+  ],
   "private": false,
   "homepage": "https://github.com/paul-xiao/pxui",
   "repository": "git@github.com:paul-xiao/pxui.git",
   "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name pxui --dest lib ./packages/index.js",
-    "lint": "vue-cli-service lint"
+    "lib": "vue-cli-service build --target lib --name pxui --dest lib ./src/index.js",
+    "wc": "vue-cli-service build --target wc --name px 'packages/**/*.vue'",
+    "lint": "vue-cli-service lint",
+    "inspect": "vue inspect > output.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -28,6 +32,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.11"
   }
 }
