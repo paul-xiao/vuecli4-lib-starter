@@ -15,7 +15,8 @@
   "main": "lib/pxui.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.0",
