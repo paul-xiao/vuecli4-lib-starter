@@ -1,23 +1,21 @@
 <template>
-  <button class="px-btn" :class="[
-      type ? 'px-btn--' + type : '',
-    ]">
-    <slot>{{text}}</slot>
+  <button class="px-btn" :class="[type ? 'px-btn--' + type : '']">
+    <slot>{{ text }}</slot>
   </button>
 </template>
 <script>
 export default {
-  name: 'PxButton',
+  name: "PxButton",
   props: {
     text: {
       type: String,
-      default: 'button',
+      default: "button"
     },
     type: {
       type: String,
-      default: '',
-    },
-  },
+      default: ""
+    }
+  }
 };
 </script>
 <style lang="stylus">

@@ -1,15 +1,14 @@
 <template>
   <div class="px-container">
-    <h1>pxui examples</h1>
-    <px-button>button</px-button>
-    <px-button type="primary">primary</px-button>
-    <px-button type="secondary">secondary</px-button>
+    <div class="header">
+      <router-link to="/spinner">大转盘</router-link>&nbsp;
+      <router-link to="/lottery">抽奖</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 <script>
-export default {
-
-};
+export default {};
 </script>
 <style lang="stylus">
 @import ('../src/styles/index.styl');
