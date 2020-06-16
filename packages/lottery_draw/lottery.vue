@@ -94,10 +94,11 @@ export default {
         this.isRunning = true;
         this.count -= 1;
         let index = this.currentIndex;
-        let duration = 8 * 10 + this.winnerIndex;
+        let duration = 8 * 10 + Number(this.winnerIndex);
         let timer = null;
         const run = () => {
-          let speed = this.easeInOut(this.currentIndex, 30, 160, duration);
+          let speed = this.easeInOut(index, 30, 160, duration);
+
           if (index < duration) {
             timer = setTimeout(() => {
               index += 1;
