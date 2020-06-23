@@ -15,8 +15,6 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export default {
-  install,
-  PxButton,
-  PxSpinner,
-  PxLottery
+  install
 };
+export { PxButton, PxSpinner, PxLottery };

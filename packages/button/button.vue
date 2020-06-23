@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "XButton"
+  name: "PxButton"
 };
 </script>
 <style>

@@ -13,7 +13,7 @@ dev = merge(baseConfig, {
       "@assets": path.resolve(__dirname, "../src/assets")
     }
   },
-  entry: path.resolve("src/pages/index.js"), //入口
+  entry: path.resolve("examples/main.js"), //入口
   devServer: {
     contentBase: path.join(__dirname, "../examples"), // Tell the server where to serve content from. This is only necessary if you want to serve static files. devServer.publicPath will be used to determine where the bundles should be served from, and takes precedence.
     historyApiFallback: true, // 404 fallback

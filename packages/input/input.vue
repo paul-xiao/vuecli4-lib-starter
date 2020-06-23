@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "PxButton",
+  name: "PxInput",
   props: {
     text: {
       type: String,
