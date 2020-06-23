@@ -6,6 +6,11 @@
 
 ```sh
 yarn add pxui
+# or
+npm i pxui
+
+# styles
+import 'pxui/lib/styles/index.css'
 
 ```
 
