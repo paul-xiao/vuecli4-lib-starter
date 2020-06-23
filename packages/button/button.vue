@@ -1,20 +1,13 @@
 <template>
-  <button class="px-btn" :class="[type ? 'px-btn--' + type : '']">
-    <slot>{{ text }}</slot>
-  </button>
+  <h1>button</h1>
 </template>
 <script>
 export default {
-  name: "PxButton",
-  props: {
-    text: {
-      type: String,
-      default: "button"
-    },
-    type: {
-      type: String,
-      default: ""
-    }
-  }
+  name: "XButton"
 };
 </script>
+<style>
+div {
+  width: 100px;
+}
+</style>

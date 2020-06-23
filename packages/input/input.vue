@@ -1,16 +1,16 @@
 <template>
   <button class="px-input">
-    <slot>{{text}}</slot>
+    <slot>{{ text }}</slot>
   </button>
 </template>
 <script>
 export default {
-  name: 'PxButton',
+  name: "PxButton",
   props: {
     text: {
       type: String,
-      default: 'button',
-    },
-  },
+      default: "button"
+    }
+  }
 };
 </script>

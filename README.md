@@ -10,3 +10,8 @@ airbnb or prettier or both?
 
 - [ ] 打包： 组件和 style
 - [ ] npm link 本地测试
+
+#### pack tools
+
+- webpack4
+- vuecli (not ready)

@@ -1,3 +1,3 @@
-import PxInput from "./button.vue";
+import PxInput from "./input.vue";
 
 export default PxInput;
