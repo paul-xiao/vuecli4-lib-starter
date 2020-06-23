@@ -14,9 +14,10 @@ if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
+// export all as plugin
 export default {
-  install,
-  PxButton,
-  PxSpinner,
-  PxLottery
+  install
 };
+
+// export seperate components
+export { PxButton, PxSpinner, PxLottery };

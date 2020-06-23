@@ -1,17 +1,20 @@
 # pxui
 
-init project
+> v0.1.2
 
-#### eslint
+#### useage
 
-airbnb or prettier or both?
+```sh
+yarn add pxui
+# or
+npm i pxui
 
-#### todos
+# styles
+import 'pxui/lib/styles/index.css'
 
-- [ ] 打包： 组件和 style
-- [ ] npm link 本地测试
+```
 
-#### pack tools
+#### release notes
 
-- webpack4
-- vuecli (not ready)
+- v0.1.2
+  - use webpack4

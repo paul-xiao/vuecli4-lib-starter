@@ -13,7 +13,7 @@ const glob = require("glob");
 let entryFiles = {};
 glob.sync("packages/**/*.js").forEach(entry => {
   let key = entry.split("/")[1];
-  entryFiles[key] = path.resolve(entry);
+  entryFiles[`${key}/index`] = path.resolve(entry);
 });
 const prod = merge(baseConfig, {
   mode: "production",

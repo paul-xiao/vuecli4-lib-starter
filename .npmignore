@@ -2,12 +2,12 @@
 examples/
 packages/
 public/
-dist/
 src/
 test/
 
 # 忽略指定文件
 vue.config.js
 babel.config.js
+.babelrc
 *.map
 .*

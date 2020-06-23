@@ -1,8 +1,6 @@
 import Router from "vue-router";
 import Vue from "vue";
-import PxSpinner from "../../packages/spinner";
-import PxLottery from "../../packages/lottery_draw";
-
+import { PxSpinner, PxLottery } from "../../dist/lib";
 Vue.use(Router);
 const routes = [
   { path: "/spinner", component: PxSpinner },
