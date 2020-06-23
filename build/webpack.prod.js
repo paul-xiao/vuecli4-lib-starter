@@ -1,49 +1,54 @@
-const path = require("path");
+const merge = require("webpack-merge");
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const devMode = false;
-module.exports = {
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+// static files
+// const CopyPlugin = require("copy-webpack-plugin");
+
+const baseConfig = require("./webpack.base");
+const path = require("path");
+const glob = require("glob");
+
+let entryFiles = {};
+glob.sync("packages/**/*.js").forEach(entry => {
+  let key = entry.split("/")[1];
+  entryFiles[key] = path.resolve(entry);
+});
+const prod = merge(baseConfig, {
   mode: "production",
-  entry: path.resolve("./src/index.js"),
-  output: {
-    path: path.resolve(__dirname, "../dist")
+  stats: "errors-only",
+  entry: Object.assign(entryFiles, {
+    index: path.resolve("src/index.js")
+  }), //入口
+  optimization: {
+    minimize: false //压缩 默认true
   },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: "vue-loader"
-      },
-      {
-        test: /\.js$/,
-        loader: "babel-loader"
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "vue-style-loader", "css-loader"]
-      },
-      {
-        test: /\.styl(us)?$/,
-        use: [MiniCssExtractPlugin.loader, "vue-style-loader", "css-loader", "stylus-loader"]
-      }
-    ]
+  output: {
+    path: path.resolve(__dirname, "../dist"), // 项目的打包文件路径
+    filename: "./lib/[name].js",
+    library: "test",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
   plugins: [
-    new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "style.css"
+    // new OptimizeCSSAssetsPlugin(),
+    new ProgressBarPlugin({
+      format: "build [:bar]" + ":percent" + " (:elapsed seconds)",
+      clear: false
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "packages", to: "lib" },
-        { from: "src/index.js", to: "lib/index.js" },
-        { from: "package.json", to: "package.json" }
-      ]
-    })
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "../src/index.js"),
+    //       to: path.resolve(__dirname, "../dist/lib")
+    //     }
+    //   ]
+    // }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "/dist"]
+    }) //清理dist文件
   ]
-};
+});
+
+module.exports = prod;

@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage", //https://babeljs.io/docs/en/babel-preset-env#usebuiltins
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-modules-umd",
+      {
+        "allowTopLevelThis": true
+      }
+    ]
+    //"@babel/plugin-transform-modules-umd"
+  ] //主要是这个
+}
