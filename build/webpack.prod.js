@@ -3,19 +3,24 @@ const merge = require("webpack-merge");
 // const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-// const CopyPlugin = require('copy-webpack-plugin')
+// static files
+// const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = require("./webpack.base");
 const path = require("path");
+const glob = require("glob");
 
+let entryFiles = {};
+glob.sync("packages/**/*.js").forEach(entry => {
+  let key = entry.split("/")[1];
+  entryFiles[key] = path.resolve(entry);
+});
 const prod = merge(baseConfig, {
   mode: "production",
   stats: "errors-only",
-  entry: {
-    button: path.resolve("./packages/button/index.js"),
-    input: path.resolve("./packages/input/index.js"),
-    lottery_draw: path.resolve("./packages/lottery_draw/index.js")
-  }, //入口
+  entry: Object.assign(entryFiles, {
+    index: path.resolve("src/index.js")
+  }), //入口
   optimization: {
     minimize: false //压缩 默认true
   },
@@ -35,10 +40,10 @@ const prod = merge(baseConfig, {
     // new CopyPlugin({
     //   patterns: [
     //     {
-    //       from: path.resolve(__dirname, '../src/components/index.js'),
-    //       to: path.resolve(__dirname, '../dist/lib'),
-    //     },
-    //   ],
+    //       from: path.resolve(__dirname, "../src/index.js"),
+    //       to: path.resolve(__dirname, "../dist/lib")
+    //     }
+    //   ]
     // }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*", "/dist"]
