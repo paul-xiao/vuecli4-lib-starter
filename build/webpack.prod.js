@@ -3,6 +3,7 @@ const merge = require("webpack-merge");
 // const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const chalk = require("chalk");
 // static files
 // const CopyPlugin = require("copy-webpack-plugin");
 
@@ -34,7 +35,9 @@ const prod = merge(baseConfig, {
   plugins: [
     // new OptimizeCSSAssetsPlugin(),
     new ProgressBarPlugin({
-      format: "build [:bar]" + ":percent" + " (:elapsed seconds)",
+      format: chalk.bgGreen.black(" build ") + "[:bar]" + ":percent" + " (:elapsed seconds)",
+      summary: false,
+      summaryContent: chalk.red.green("Build Completed in"),
       clear: false
     }),
     // new CopyPlugin({

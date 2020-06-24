@@ -1,5 +1,6 @@
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MyPlugin = require("./plugin");
 
 const mode = process.env.NODE_ENV !== "production";
 
@@ -36,6 +37,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new MyPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: "./lib/styles/[name].css",
