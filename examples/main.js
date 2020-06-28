@@ -1,9 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 // 导入组件库
-import pxui from "../dist/lib";
+import pxui from "../src";
 import router from "./router";
-import "../dist/lib/styles/index.css";
 // 注册组件库
 Vue.use(pxui);
 Vue.config.productionTip = false;

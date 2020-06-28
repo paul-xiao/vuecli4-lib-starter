@@ -14,16 +14,26 @@ export default {
     return {
       links: [
         {
-          link: "/spinner",
-          name: "大转盘"
+          link: "/palette",
+          name: "palette"
         },
         {
-          link: "/lottery",
-          name: "抽奖"
+          link: "/button",
+          name: "button"
         }
       ]
     };
+  },
+  mounted() {
+    console.log(this.$router.options.routes);
   }
 };
 </script>
-<style lang="stylus"></style>
+<style lang="stylus">
+.header
+  border-bottom 1px solid
+  padding 15px 0
+  margin-bottom 15px
+  a
+   margin 5px
+</style>

@@ -1,13 +1,11 @@
 <template>
-  <h1>button</h1>
+  <button class="px-btn"><slot></slot></button>
 </template>
 <script>
 export default {
   name: "PxButton"
 };
 </script>
-<style>
-div {
-  width: 100px;
-}
+<style lang="stylus" scoped>
+@import '../../src/styles/components/button.styl'
 </style>

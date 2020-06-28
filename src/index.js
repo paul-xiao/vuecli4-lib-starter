@@ -1,7 +1,6 @@
 import PxButton from "../packages/button";
 import PxSpinner from "../packages/spinner";
 import PxLottery from "../packages/lottery_draw";
-
 const components = [PxButton, PxSpinner, PxLottery];
 
 const install = Vue => {

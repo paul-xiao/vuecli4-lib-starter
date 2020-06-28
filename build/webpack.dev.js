@@ -2,11 +2,11 @@ const merge = require("webpack-merge");
 const path = require("path");
 const baseConfig = require("./webpack.base");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+console.log(path.resolve(__dirname, "../src"));
 
 dev = merge(baseConfig, {
   mode: "development",
-  stats: "none",
+  stats: "normal",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "../dist"),
@@ -24,10 +24,10 @@ dev = merge(baseConfig, {
     publicPath: "/"
   },
   plugins: [
-    new ProgressBarPlugin({
-      format: "build [:bar]" + ":percent" + " (:elapsed seconds)",
-      clear: false
-    }),
+    // new ProgressBarPlugin({
+    //   format: "build [:bar]" + ":percent" + " (:elapsed seconds)",
+    //   clear: false
+    // }),
     new HtmlWebpackPlugin({
       filename: "index.html", // 生成文件名称
       template: "./public/index.html", // target

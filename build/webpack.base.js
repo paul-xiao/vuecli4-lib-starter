@@ -1,12 +1,12 @@
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MyPlugin = require("./plugin");
-
+const path = require("path");
 const mode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   resolve: {
-    extensions: [".js", ".vue"]
+    extensions: [".js", ".vue"] // which is what enables users to leave off the extension when importing:
   },
   module: {
     rules: [
@@ -31,7 +31,19 @@ module.exports = {
         use: [
           mode ? "vue-style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
-          "stylus-loader"
+          {
+            loader: "stylus-loader",
+            options: {
+              import: [path.resolve(__dirname, "../src/styles/index.styl")] //global styles
+            }
+          }
+          // {
+          //   loader: "style-resources-loader",
+          //   options: {
+          //     patterns: path.resolve(__dirname, "../src/styles/palette.styl"),
+          //     injector: "append"
+          //   }
+          // }
         ]
       }
     ]
