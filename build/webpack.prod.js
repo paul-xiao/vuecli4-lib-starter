@@ -1,8 +1,9 @@
 const merge = require("webpack-merge");
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+//const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+// const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const chalk = require("chalk");
 // static files
 // const CopyPlugin = require("copy-webpack-plugin");
@@ -33,13 +34,14 @@ const prod = merge(baseConfig, {
     umdNamedDefine: true
   },
   plugins: [
-    // new OptimizeCSSAssetsPlugin(),
-    new ProgressBarPlugin({
-      format: chalk.bgGreen.black(" build ") + "[:bar]" + ":percent" + " (:elapsed seconds)",
-      summary: false,
-      summaryContent: chalk.red.green("Build Completed in"),
-      clear: false
-    }),
+    //new OptimizeCSSAssetsPlugin(),
+    // new BundleAnalyzerPlugin(),
+    // new ProgressBarPlugin({
+    //   format: chalk.bgGreen.black(" build ") + "[:bar]" + ":percent" + " (:elapsed seconds)",
+    //   summary: false,
+    //   summaryContent: chalk.red.green("Build Completed in"),
+    //   clear: false
+    // }),
     // new CopyPlugin({
     //   patterns: [
     //     {
