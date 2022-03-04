@@ -1,3 +1,4 @@
-import PxButton from "./button.vue";
-
-export default PxButton;
+import PxButton from './src/index'
+export default Vue => {
+    Vue.component(PxButton.name, PxButton);
+};

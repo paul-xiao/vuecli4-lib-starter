@@ -1,20 +1,24 @@
 # pxui
 
-> v0.1.2
-
-#### useage
-
-```sh
-yarn add pxui
-# or
-npm i pxui
-
-# styles
-import 'pxui/lib/styles/index.css'
-
+## Project setup
+```
+yarn install
 ```
 
-#### release notes
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-- v0.1.2
-  - use webpack4
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
