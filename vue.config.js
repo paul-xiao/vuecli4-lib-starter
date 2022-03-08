@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  // 修改默认的入口
+  productionSourceMap: false,
   pages: {
     index: {
       entry: 'examples/main.js',
@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   css: {
-    extract: false,
+    extract: true,
     sourceMap: false,
     loaderOptions: {
       postcss: {

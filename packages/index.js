@@ -1,5 +1,4 @@
 import button from './button';
-import "tailwindcss/tailwind.css"
 const components = [button];
 const install = function(Vue) {
     if (install.installed) return;
