@@ -1,11 +1,15 @@
 <template>
   <div class="p-5 m-5 bg-white">
-    <px-pie class="chart" :config="config"></px-pie>
+    <Button text="xxx" />
   </div>
 </template>
+
 <script type="text/javascript">
+import { Button } from '~/pxui'
+
 export default {
   name: 'Echarts',
+  components: { Button },
   data() {
     return {
       config: {
@@ -16,11 +20,11 @@ export default {
           { value: 0, name: '30岁以下' },
           { value: 0, name: '30-40岁' },
           { value: 0, name: '51-60岁' },
-          { value: 0, name: '41-50岁' },
-        ],
-      },
+          { value: 0, name: '41-50岁' }
+        ]
+      }
     }
-  },
+  }
 }
 </script>
 <style scoped>

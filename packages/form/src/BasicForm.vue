@@ -29,7 +29,6 @@
 </template>
 <script>
 export default {
-  name: 'PxForm',
   props: {
     schema: {
       type: Array,

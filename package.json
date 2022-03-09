@@ -14,7 +14,7 @@
     "lib": "cross-env rimraf ./lib && node ./build/cli.build.js",
     "lib-help": "vue-cli-service build --target lib --help"
   },
-  "main": "lib/pxui.umd.js",
+  "main": "lib/pxui.js",
   "typings": "types/index.d.ts",
   "files": [
     "dist",
@@ -40,7 +40,7 @@
     "iview": "^3.5.4",
     "node-sass": "5",
     "postcss": "^7",
-    "pxui": "^0.1.4",
+    "pxui": "^0.1.5",
     "rimraf": "^3.0.2",
     "runjs": "^4.4.2",
     "sass-loader": "10.1.1",

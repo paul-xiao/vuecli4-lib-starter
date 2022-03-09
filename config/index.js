@@ -1,5 +1,5 @@
 module.exports = {
-  libPrefix: 'px',
+  prefix: 'Px',
   styleOutputPath: 'theme',
   outputPath: 'lib',
   clearConsole: true,

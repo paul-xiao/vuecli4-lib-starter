@@ -25,8 +25,8 @@ export default {
   },
   mounted() {
     const routes = this.$router.options.routes
-    console.log(routes);
-    this.components = []
+    console.log(routes[1].children);
+    this.components = routes[1].children[0].children
   }
 }
 </script>

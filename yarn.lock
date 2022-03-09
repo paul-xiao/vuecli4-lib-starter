@@ -7429,10 +7429,10 @@ purgecss@^4.0.3:
     postcss "^8.3.5"
     postcss-selector-parser "^6.0.6"
 
-pxui@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/pxui/-/pxui-0.1.4.tgz#76b6f7cc87361abb784a54cb8a29f1c772983ab7"
-  integrity sha512-oD5bG7Hmv5E4TWDF5MZt1UMwtF1mNnNaa2bRtUrLb1mTKJHM+0u6jz8WbpzBcTsYOgP7phOxXu43ORvE9SDaZw==
+pxui@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/pxui/-/pxui-0.1.5.tgz#de64862fa87c5d2d0d37a1022349e4d4adb97973"
+  integrity sha512-30n2H39VGjocbkH/njHFyi+FquWjDkFC+uE2CBb2bpGeEhxDJ9064dJAJfE0fhzloZNUY1dk7AwiT8D3slgrYQ==
   dependencies:
     core-js "^3.6.5"
     element-ui "^2.15.6"
