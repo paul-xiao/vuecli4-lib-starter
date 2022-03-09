@@ -12,7 +12,8 @@
     "lint": "vue-cli-service lint",
     "dev": "set NODE_ENV=development&& webpack-dev-server --config ./build/webpack.dev.js",
     "lib": "cross-env rimraf ./lib && node ./build/cli.build.js",
-    "lib-help": "vue-cli-service build --target lib --help"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "main": "lib/pxui.js",
   "typings": "types/index.d.ts",
@@ -38,6 +39,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "iview": "^3.5.4",
+    "less": "3",
+    "less-loader": "5",
     "node-sass": "5",
     "postcss": "^7",
     "pxui": "^0.1.5",
@@ -45,7 +48,9 @@
     "runjs": "^4.4.2",
     "sass-loader": "10.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue-template-compiler": "^2.6.11"
+    "vue-highlight.js": "^2.2.0",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.9.7"
   },
   "eslintConfig": {
     "root": true,

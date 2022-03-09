@@ -2,9 +2,9 @@ const { run } = require('runjs')
 const { getAssetsPath, chalkConsole, resolve } = require('../utils')
 const { move, fileDisplay } = require('../utils/file')
 const rimraf = require('rimraf')
-
+const { prefix } =  require('../config')
 function build() {
-  run(`vue-cli-service build --target lib --name pxui --formats umd-min --dest lib packages/index.js`)
+  run(`vue-cli-service build --target lib --name ${prefix.toLowerCase()}ui --formats umd-min --dest lib packages/index.js`)
 }
 
 build()
