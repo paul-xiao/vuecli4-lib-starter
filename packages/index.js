@@ -1,6 +1,6 @@
 import DynamicPie from './charts';
 import BasicForm from './form';
-import './styles/common.scss'
+import './theme/common.scss'
 const components = [DynamicPie, BasicForm];
 const install = function(Vue) {
     if (install.installed) return;

@@ -1,6 +1,6 @@
 {
   "name": "pxui",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": false,
   "description": "a vue2.0 UI lib",
   "author": {
@@ -11,10 +11,10 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "set NODE_ENV=development&& webpack-dev-server --config ./build/webpack.dev.js",
-    "lib": "vue-cli-service build --target lib --name pxui --dest lib packages/index.js",
+    "lib": "cross-env rimraf ./lib && node ./build/cli.build.js",
     "lib-help": "vue-cli-service build --target lib --help"
   },
-  "main": "lib/index.js",
+  "main": "lib/pxui.umd.js",
   "typings": "types/index.d.ts",
   "files": [
     "dist",
@@ -34,12 +34,15 @@
     "@vue/cli-service": "~4.5.0",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "iview": "^3.5.4",
     "node-sass": "5",
     "postcss": "^7",
-    "pxui": "^0.1.3",
+    "pxui": "^0.1.4",
+    "rimraf": "^3.0.2",
+    "runjs": "^4.4.2",
     "sass-loader": "10.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-template-compiler": "^2.6.11"

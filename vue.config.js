@@ -19,7 +19,8 @@ module.exports = {
   },
   configureWebpack: {
     output: {
-      libraryExport: 'default'
+      libraryExport: 'default',
+      filename: 'bundle.js'
     }
   },
   chainWebpack: config => {
@@ -32,9 +33,9 @@ module.exports = {
     config.plugin('copy').use(require.resolve('copy-webpack-plugin'), [
       [
         {
-          from: 'packages/styles',
-          to: 'styles'
-        }
+          from: 'packages/theme',
+          to: 'theme'
+        },
       ]
     ])
     // packages和examples目录需要加入编译
