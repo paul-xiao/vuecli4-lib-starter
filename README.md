@@ -19,6 +19,8 @@ yarn build
 ```
 yarn lint
 ```
+### private install
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+yarn add dcv --registry http://10.1.192.34/fed/dcv.git
+```

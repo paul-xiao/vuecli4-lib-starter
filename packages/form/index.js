@@ -1,4 +1,4 @@
-import PxButton from './src/index'
+import BasicForm from './src/BasicForm'
 export default Vue => {
-    Vue.component(PxButton.name, PxButton);
+    Vue.component(BasicForm.name, BasicForm);
 };

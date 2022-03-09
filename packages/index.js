@@ -1,5 +1,7 @@
-import button from './button';
-const components = [button];
+import DynamicPie from './charts';
+import BasicForm from './form';
+import './styles/common.scss'
+const components = [DynamicPie, BasicForm];
 const install = function(Vue) {
     if (install.installed) return;
     components.map(component => {
@@ -12,6 +14,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export default {
     install,
-    button
+    DynamicPie,
+    BasicForm
 };
-export { button };
+export { DynamicPie, BasicForm };

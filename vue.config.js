@@ -9,12 +9,17 @@ module.exports = {
     }
   },
   css: {
-    extract: true,
+    extract: false, // 提取style里的css到单独文件
     sourceMap: false,
     loaderOptions: {
       postcss: {
         plugins: [require('tailwindcss'), require('autoprefixer')]
       }
+    }
+  },
+  configureWebpack: {
+    output: {
+      libraryExport: 'default'
     }
   },
   chainWebpack: config => {
@@ -23,6 +28,15 @@ module.exports = {
     // lib目录是组件库最终打包好存放的地方，不需要eslint检查
     // examples/docs是存放md文档的地方，也不需要eslint检查
     config.module.rule('eslint').exclude.add(path.resolve('lib')).end().exclude.add(path.resolve('examples/docs')).end()
+    // copy文件
+    config.plugin('copy').use(require.resolve('copy-webpack-plugin'), [
+      [
+        {
+          from: 'packages/styles',
+          to: 'styles'
+        }
+      ]
+    ])
     // packages和examples目录需要加入编译
     config.module
       .rule('js')
@@ -39,7 +53,7 @@ module.exports = {
   },
   pluginOptions: {
     'style-resources-loader': {
-      preProcessor: 'less',
+      preProcessor: 'scss',
       patterns: []
     }
   }
