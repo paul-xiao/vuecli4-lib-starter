@@ -1,6 +1,6 @@
 {
   "name": "pxui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "a vue2.0 UI lib",
   "author": {
@@ -13,7 +13,8 @@
     "dev": "set NODE_ENV=development&& webpack-dev-server --config ./build/webpack.dev.js",
     "lib": "cross-env rimraf ./lib && node ./build/cli.build.js",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "main": "lib/pxui.js",
   "typings": "types/index.d.ts",
@@ -35,6 +36,7 @@
     "@vue/cli-service": "~4.5.0",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
+    "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
