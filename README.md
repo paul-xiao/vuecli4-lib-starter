@@ -1,3 +1,3 @@
-# pxui
+# vuecli4 lib starter
 
-> vue2.0 ui lib based on tailwindcss and element-ui
+> vue2.x ui lib based on tailwindcss and element-ui
