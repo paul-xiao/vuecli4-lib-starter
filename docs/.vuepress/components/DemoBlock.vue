@@ -24,14 +24,14 @@ import DemoCard from './DemoCard'
 export default {
   components: { DemoCard },
   data() {
-    return {};
+    return {}
   },
   computed: {
     bindValue() {
       return { ...this.$attrs, ...this.props }
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .demo-block {

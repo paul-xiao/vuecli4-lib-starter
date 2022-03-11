@@ -1,10 +1,10 @@
-//routes.js
-//递归获取src文件夹下的所有.vue文件
+// routes.js
+// 递归获取src文件夹下的所有.vue文件
 const files = require.context('@/views', true, /.vue/)
 let pages = {}
-//生成路由规则
+// 生成路由规则
 let generator = []
-files.keys().forEach(key => {
+files.keys().forEach((key) => {
   pages[key.replace(/(\.\/|\.vue)/g, '')] = files(key).default
 })
 /**
@@ -41,7 +41,7 @@ const getNestRoute = (generator, depth = 1, parent = '') => {
 }
 
 getNestRoute(generator)
-//生成所有路由，并去除一级文件夹名称
+// 生成所有路由，并去除一级文件夹名称
 // Object.keys(pages).forEach(item => {
 //   let Rpath = item.replace('/index', '') || '/components'
 //   if (item !== 'App') {
@@ -55,7 +55,7 @@ getNestRoute(generator)
 //     })
 //   }
 // })
-//将生成路由导入合并
+// 将生成路由导入合并
 // const routes = [
 //   {
 //     path: '/',

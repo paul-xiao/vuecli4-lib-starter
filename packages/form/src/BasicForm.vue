@@ -1,12 +1,6 @@
 <template>
-  <el-form
-    ref="pxForm"
-    :model="form"
-    status-icon
-    label-width="150px"
-    class="demo-pxForm"
-  >
-    <el-form-item
+  <ElForm ref="pxForm" :model="form" status-icon label-width="150px" class="demo-pxForm">
+    <ElFormItem
       v-for="item of schema"
       :key="item.prop"
       :label="item.label"
@@ -14,34 +8,29 @@
       :rules="item.rules"
     >
       <slot v-if="item.slot" :name="item.prop"></slot>
-      <el-input
-        v-else
-        v-model="form[item.prop]"
-        :type="item.type"
-        autocomplete="off"
-      ></el-input>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm('pxForm')">提交</el-button>
-      <el-button @click="resetForm('pxForm')">重置</el-button>
-    </el-form-item>
-  </el-form>
+      <ElInput v-else v-model="form[item.prop]" :type="item.type" autocomplete="off"></ElInput>
+    </ElFormItem>
+    <ElFormItem>
+      <ElButton type="primary" @click="submitForm('pxForm')">提交</ElButton>
+      <ElButton @click="resetForm('pxForm')">重置</ElButton>
+    </ElFormItem>
+  </ElForm>
 </template>
 <script>
 export default {
   props: {
     schema: {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     value: {
       type: Object,
-      default: () => {},
-    },
+      default: () => {}
+    }
   },
   data() {
     return {
-      form: this.value,
+      form: this.value
     }
   },
   methods: {
@@ -56,7 +45,7 @@ export default {
     },
     resetForm(val) {
       this.$refs[val].resetFields()
-    },
-  },
+    }
+  }
 }
 </script>

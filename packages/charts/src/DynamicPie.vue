@@ -13,14 +13,14 @@ export default {
   props: {
     config: {
       type: Object,
-      default: () => {},
-    },
+      default: () => {}
+    }
   },
   data() {
     return {
       mergedConfig: null,
       chart: null,
-      activeIndex: 0,
+      activeIndex: 0
     }
   },
   computed: {
@@ -32,7 +32,7 @@ export default {
     },
     ringName() {
       return this.config.data[this.activeIndex].name
-    },
+    }
   },
   mounted() {
     this.echartsInit()
@@ -52,12 +52,12 @@ export default {
             y: '70%',
             textStyle: {
               fontSize: 16,
-              color: '#ccc', // 主标题文字颜色
+              color: '#ccc' // 主标题文字颜色
             },
             subtextStyle: {
               fontSize: 20,
-              color: '#FFD600', // 副标题文字颜色
-            },
+              color: '#FFD600' // 副标题文字颜色
+            }
           },
           series: [
             {
@@ -69,7 +69,7 @@ export default {
               label: {
                 normal: {
                   show: false,
-                  position: 'center',
+                  position: 'center'
                 },
                 emphasis: {
                   show: false,
@@ -83,18 +83,18 @@ export default {
                   textStyle: {
                     fontSize: '15',
                     fontWeight: 'bold',
-                    color: '#ccc',
-                  },
-                },
+                    color: '#ccc'
+                  }
+                }
               },
               labelLine: {
                 normal: {
-                  show: false,
-                },
+                  show: false
+                }
               },
-              data: data.data,
-            },
-          ],
+              data: data.data
+            }
+          ]
         }
       }
 
@@ -103,7 +103,7 @@ export default {
       myChart.dispatchAction({
         type: 'highlight',
         seriesIndex: 0,
-        dataIndex: i,
+        dataIndex: i
       }) // 设置默认选中高亮部分
       setInterval(() => {
         i++
@@ -114,16 +114,16 @@ export default {
         myChart.dispatchAction({
           type: 'downplay',
           seriesIndex: 0,
-          dataIndex: i === 0 ? 4 : i - 1,
+          dataIndex: i === 0 ? 4 : i - 1
         })
         myChart.dispatchAction({
           type: 'highlight',
           seriesIndex: 0,
-          dataIndex: i === 5 ? 0 : i,
+          dataIndex: i === 5 ? 0 : i
         }) // 设置默认选中高亮部分
       }, 1000)
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>
@@ -138,11 +138,11 @@ export default {
 
 .dv-active-ring-chart .active-ring-info {
   position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -156,11 +156,11 @@ export default {
 .dv-active-ring-chart .active-ring-info .active-ring-name {
   width: 100px;
   height: 30px;
+  overflow: hidden;
   color: #ccc;
   text-align: center;
-  vertical-align: middle;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
+  vertical-align: middle;
 }
 </style>

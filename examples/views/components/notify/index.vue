@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'xx',
+  name: 'Xx',
   data() {
     return {
       pollingTimer: null,
@@ -23,7 +23,8 @@ export default {
         const data = [
           {
             id: 1,
-            content: '[UUID=39b4d3b7d4ce420f9b3faa0c155ffab4]裸机agent上报部署服务器IP[10.220.100.167]与系统保存IP[10.220.100.168]不一致，请检查。【分布式云平台】'
+            content:
+              '[UUID=39b4d3b7d4ce420f9b3faa0c155ffab4]裸机agent上报部署服务器IP[10.220.100.167]与系统保存IP[10.220.100.168]不一致，请检查。【分布式云平台】'
           },
           {
             id: 2,
@@ -32,7 +33,7 @@ export default {
         ]
 
         for (let item of data) {
-          console.log(this.notify);
+          console.log(this.notify)
           if (!this.notify[item.id]) {
             setTimeout(() => {
               this.notify[item.id] = this.$notify({
@@ -58,12 +59,12 @@ export default {
 
 <style>
 #app {
+  margin-top: 60px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  text-align: center;
 }
 .notify {
   word-break: break-all;

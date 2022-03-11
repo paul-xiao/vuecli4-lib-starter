@@ -1,18 +1,9 @@
 <template>
   <div class="demo-wrap">
-    <h3>{{title}}</h3>
-    <el-table
-      :data="tableData"
-      v-bind="$attrs"
-      v-on="$listeners"
-      style="width: 100%;"
-    >
+    <h3>{{ title }}</h3>
+    <el-table :data="tableData" v-bind="$attrs" v-on="$listeners" style="width: 100%">
       <template v-for="(item, index) in tableHeader">
-        <el-table-column
-          :prop="index+''"
-          :label="item"
-        >
-        </el-table-column>
+        <el-table-column :prop="index + ''" :label="item"></el-table-column>
       </template>
     </el-table>
   </div>

@@ -1,8 +1,6 @@
 <template>
-    <h1>editor</h1>
+  <h1>editor</h1>
 </template>
 <script>
-export default {
-    
-}
+export default {}
 </script>

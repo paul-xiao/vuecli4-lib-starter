@@ -31,21 +31,21 @@ export default {
 .chart {
   width: 600px;
   height: 300px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 #my-chart {
   width: 600px;
   height: 300px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 #my-chart2 {
   width: 600px;
   height: 300px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 </style>

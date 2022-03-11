@@ -7,14 +7,20 @@
     "name": "paulxiao"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "set NODE_ENV=development&& webpack-dev-server --config ./build/webpack.dev.js",
     "lib": "cross-env rimraf ./lib && node ./build/cli.build.js",
-    "docs:dev": "vuepress dev docs",
+    "lint": "vue-cli-service lint",
+    "lint:css": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:eslint": "eslint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/eslint/",
+    "lint:prettier": "prettier --write  \"**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:all": "yarn lint:",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged",
+    "docs": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "prepare": "husky install"
   },
   "main": "lib/pxui.js",
   "typings": "types/index.d.ts",
@@ -31,24 +37,36 @@
     "vue-router": "3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "4.0.0",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint": "5.16.0",
+    "eslint-config-standard": "4.0.0",
+    "eslint-plugin-vue": "5.0.0",
+    "husky": ">=6",
     "iview": "^3.5.4",
     "less": "3",
     "less-loader": "5",
+    "lint-staged": ">=10",
     "node-sass": "5",
     "postcss": "^7",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3",
     "pxui": "^0.1.5",
     "rimraf": "^3.0.2",
     "runjs": "^4.4.2",
     "sass-loader": "10.1.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.1.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-highlight.js": "^2.2.0",
     "vue-template-compiler": "^2.6.11",
@@ -86,5 +104,9 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/paul-xiao/pxui.git"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.cache/stylelint/": "stylelint --fix"
   }
 }

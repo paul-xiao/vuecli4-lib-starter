@@ -3,32 +3,17 @@
     <div class="source">
       <slot />
     </div>
-    <div
-      v-show="showCode"
-      class="code"
-    >
-      <div
-        v-if="$slots.codeDesc"
-        class="code-desc"
-      >
+    <div v-show="showCode" class="code">
+      <div v-if="$slots.codeDesc" class="code-desc">
         <slot name="codeDesc" />
       </div>
       <div class="code-src">
         <slot name="code" />
       </div>
     </div>
-    <div
-      class="action"
-      @click="showCode=!showCode"
-    >
-      <span>{{ `${showCode?'隐藏':'显示'}代码` }}</span>
-      <span
-        v-if="$attrs.onlineRunLink"
-        class="open"
-        @click="open"
-      >
-        在线运行
-      </span>
+    <div class="action" @click="showCode = !showCode">
+      <span>{{ `${showCode ? '隐藏' : '显示'}代码` }}</span>
+      <span v-if="$attrs.onlineRunLink" class="open" @click="open">在线运行</span>
     </div>
   </div>
 </template>
@@ -37,14 +22,14 @@ export default {
   data() {
     return {
       showCode: false
-    };
+    }
   },
   methods: {
     open() {
       window.open(this.$attrs.onlineRunLink)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .demo-card {

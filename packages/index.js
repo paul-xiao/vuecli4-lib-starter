@@ -6,7 +6,7 @@ import { prefix } from '../config'
 const components = { DynamicPie, BasicForm, Button }
 
 for (const [key, value] of Object.entries(components)) {
-  value.install = vue => {
+  value.install = (vue) => {
     vue.component(`${prefix}${key}`, value)
   }
 }
